@@ -1,9 +1,11 @@
 .game-item {
   color: #ccc;
-  background: #fafafa;
+  background: #161616;
   width: 24vw;
   height: 13vw;
   margin-top: 1vw;
+  position: relative;
+  transition: all .3s ease;
 }
 
 .game-item img {
@@ -11,4 +13,29 @@
   height: 100%;
   /* object-fit: fill; */
   margin: 0;
+  transition: all .2s ease;
+}
+
+.game-title {
+  opacity: 0;
+  background: #222222;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  width: calc(24vw - 20px);
+  bottom: -25px;
+  transition: all .2s ease;
+}
+
+.game-item:hover {
+  transform: scale(1.03);
+}
+
+.game-item:hover img {
+  opacity: .4;
+}
+
+.game-item:hover .game-title {
+  opacity: 1;
+  bottom: 0px;
 }

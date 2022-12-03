@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-list-angular';
+
+  searchValue = "";
+
+  callTest(event: string) {
+    console.log('hehe '+ event);
+  }
 }

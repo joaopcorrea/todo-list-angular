@@ -1,0 +1,29 @@
+mat-toolbar {
+  background: #393939;
+  color: #ccc;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background: #ccc;
+  color: black;
+  width: 50%;
+}
+
+.input-container mat-icon {
+  margin-left: 10px;
+}
+
+.input-container input {
+  padding: 12px;
+  background-color: #ccc;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  width: 100%;
+}

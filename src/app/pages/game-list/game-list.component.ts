@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Game from 'src/app/models/Game';
 
 @Component({
@@ -46,15 +46,17 @@ export class GameListComponent  {
     },
     {
       title: 'Fortnite',
-      imageUrl: ''
+      imageUrl: 'https://i0.wp.com/gamingonphone.com/wp-content/uploads/2022/05/Fortnite-Characters-Cover.jpg'
     },
     {
       title: 'Battlefield 1',
-      imageUrl: ''
+      imageUrl: 'https://www.showmetech.com.br/wp-content/uploads//2016/05/battlefield-1-capa-2-1024x576.jpg'
     },
     {
       title: 'Ghost Recon Wildlands',
-      imageUrl: ''
+      imageUrl: 'https://cdn1.epicgames.com/hyacinth/offer/GRW_StandardCapsule-1920x1080-62b7dd9ccafb91e4303fb563b93d91589bb7ebf1.jpg'
     },
-  ]
+  ];
+
+  @Input() searchValue = "";
 }
