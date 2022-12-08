@@ -1,0 +1,63 @@
+.discount-bg {
+  background: url('https://store.cloudflare.steamstatic.com/public/images/v6/home/background_spotlight.jpg');
+  background-size: cover;
+  position: absolute;
+  padding: 5px;
+  bottom: 0;
+  width: calc(100% - 10px);
+  display: flex;
+  justify-content: end;
+}
+
+.discount-block {
+  display: flex;
+  width: 50%;
+}
+
+.discount-pct {
+  width: calc(50% - 10px);
+  background: #4c6b22;
+  color: #BEEE11;
+
+  line-height: 34px;
+  padding: 0 5px;
+  font-size: 26px;
+
+  text-align: center;
+
+  display: inline-block;
+}
+
+.discount-prices {
+  width: 50%;
+  background-color: rgba(20,31,44,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.discount-original-price {
+  color: #738895;
+  position: relative;
+  font-size: 11px;
+  line-height: 12px;
+}
+
+.discount-original-price:before {
+  content: '';
+  left: 0px;
+  right: 0px;
+  position: absolute;
+  top: 43%;
+  border-bottom: 1.5px solid #738895;
+  transform: skewY(-8deg);
+  box-shadow: 0 0 2px black;
+}
+
+.discount-final-price {
+  color: #BEEE11;
+  line-height: 16px;
+  font-size: 15px;
+}

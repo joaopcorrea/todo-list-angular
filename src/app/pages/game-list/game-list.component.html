@@ -1,7 +1,14 @@
-<div class="game-list">
-  <ng-container *ngFor="let game of gameList">
-    <app-game-item [game]="game" 
-      *ngIf="game.title.toLowerCase().includes(searchValue)">
-    </app-game-item>
-  </ng-container>
+<div class="container">
+  <app-search (searchChanged)="searchValue = $event"></app-search>
+  <div class="game-list">
+    <ng-container *ngFor="let game of gameList">
+      <app-game-item 
+        [game]="game" 
+        *ngIf="game.title.toLowerCase().includes(searchValue)"
+        saleDirective 
+        [discountPercentage]="game.discountPercentage" 
+        [originalPrice]="game.price"
+        ></app-game-item>
+    </ng-container>
+  </div>
 </div>

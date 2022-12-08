@@ -1,9 +1,9 @@
 .game-item {
   color: #ccc;
   background: #161616;
-  width: 24vw;
-  height: 13vw;
-  margin-top: 1vw;
+  width: 323px;
+  height: 173px;
+  margin-top: 20px;
   position: relative;
   transition: all .3s ease;
 }
@@ -18,11 +18,11 @@
 
 .game-title {
   opacity: 0;
-  background: #222222;
+  background: rgba(34, 34, 34, 1);
   padding: 10px;
   text-align: center;
   position: absolute;
-  width: calc(24vw - 20px);
+  width: calc(100% - 20px);
   bottom: -25px;
   transition: all .2s ease;
 }

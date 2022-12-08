@@ -1,0 +1,9 @@
+<div class="discount-bg">
+  <div class="discount-block">
+    <div class="discount-pct"><span>{{ discountPercentage | discount }}</span></div>
+    <div class="discount-prices">
+      <span class="discount-original-price">{{ originalPrice | currency:'R$ ' }}</span>
+      <span class="discount-final-price">{{ finalPrice | currency:'R$ ' }}</span>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,5 @@
-<app-header (searchChanged)="searchValue = $event"></app-header>
+<app-header></app-header>
 
 <div class="games-container">
-  <app-game-list [searchValue]="searchValue"></app-game-list>
   <router-outlet></router-outlet>
 </div>

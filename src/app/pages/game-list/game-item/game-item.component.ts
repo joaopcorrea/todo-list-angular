@@ -10,7 +10,9 @@ export class GameItemComponent implements OnInit {
 
   @Input() game: Game = {
     title: 'Título do Jogo',
-    imageUrl: ''
+    imageUrl: '',
+    price: 0,
+    discountPercentage: 0,
   };
 
   constructor() { }
