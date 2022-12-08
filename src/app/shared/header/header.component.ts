@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +10,6 @@ export class HeaderComponent {
   @Output() searchChanged = new EventEmitter();
 
   onSearchChange(searchValue: string) {
-    this.searchChanged.emit(searchValue.toLowerCase());
+    this.searchChanged.emit(searchValue.trim().toLowerCase());
   }
 }
