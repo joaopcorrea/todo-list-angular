@@ -1,11 +1,10 @@
 <mat-toolbar>
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
   <span>Jogos</span>
   <span class="spacer"></span>
-  <button mat-button>
-    <mat-icon>person</mat-icon>
-    LOGIN
+  <button class="btn-nav" [routerLink]="['/home']" routerLinkActive="active" >
+    Todos os jogos
+  </button>
+  <button class="btn-nav" [routerLink]="['/new-game']" routerLinkActive="active" >
+    Novo jogo
   </button>
 </mat-toolbar>

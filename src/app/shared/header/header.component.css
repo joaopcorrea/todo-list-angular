@@ -8,3 +8,52 @@ mat-toolbar {
 .spacer {
   flex: 1 1 auto;
 }
+
+.btn-nav {
+  margin-left: 10px;
+  position: relative;
+  background: transparent;
+  padding: 7px 15px 7px 25px;
+  border: none;
+  border-radius: 1px;
+  color: #ccc;
+  font-weight: 500;
+  font-family: 'Roboto', 'Helvetica Neue', 'sans-serif';
+  transition: all .1s ease;
+  font-size: .7em;
+}
+
+.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 2px;
+  height: 100%;
+  background: #6dcc17;
+  transform: skewX(-20deg);
+  z-index: 1;
+}
+
+.active:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 2px;
+  height: 100%;
+  background: #6dcc17;
+  transform: skewX(-20deg);
+  z-index: 1;
+}
+
+.btn-nav:hover {
+  border-bottom: 3px solid #6dcc17;
+  margin-bottom: -3px;
+  background-color: rgba(0,0,0,.05);
+  cursor: pointer;
+}
+
+.btn-nav:active {
+  background-color: rgba(204, 204, 204, .2);
+}

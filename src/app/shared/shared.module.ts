@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { DiscountPipe } from './pipes/discount.pipe';
 import { SaleDirective } from './directives/sale.directive';
 import { NgModule } from '@angular/core';
@@ -15,11 +16,12 @@ import { SaleComponent } from './sale/sale.component';
     SearchComponent,
     SaleDirective,
     SaleComponent,
-    DiscountPipe
+    DiscountPipe,
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,
