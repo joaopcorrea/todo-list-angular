@@ -1,4 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
+import { DialogComponent } from './../../shared/dialog/dialog.component';
+import { GameService } from './../../services/game.service';
 import Game from 'src/app/models/Game';
 
 @Component({
@@ -8,23 +12,23 @@ import Game from 'src/app/models/Game';
 })
 export class GameDetailComponent implements OnInit {
 
-  public game: Game = {
-    title: 'Título do Jogo',
-    imageUrl: '',
-    videoUrl: '',
-    description: '',
-    price: 0,
-    discountPercentage: 0
-  };
-
+  public game: Game = new Game('Sem título');
   salePrice: number = 0;
   
-  constructor() { 
-    
-  }
+  constructor(private dialog: MatDialog, private gameService: GameService) {}
 
   ngOnInit(): void {
     this.game = window.history.state.game;
     this.salePrice = this.game.price - (this.game.price * this.game.discountPercentage / 100) - 0.01;
+  }
+
+  openDialog() {
+      this.dialog.open(DialogComponent, { 
+        data: { title: 'Atualizar Jogo', game: this.game } 
+      });
+  }
+
+  removeGame() {
+    this.gameService.deleteGame(this.game.id);
   }
 }

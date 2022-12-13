@@ -1,0 +1,35 @@
+<div class="container">
+  <form class="task-form" *ngIf="gameForm" [formGroup]="gameForm" (ngSubmit)="onSubmitForm()">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <input matInput formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Imagem</mat-label>
+      <input matInput formControlName="imageUrl">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Vídeo</mat-label>
+      <input matInput formControlName="videoUrl">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Preço</mat-label>
+      <input matInput formControlName="price">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Desconto</mat-label>
+      <input matInput formControlName="discountPercentage">
+    </mat-form-field>
+  
+    <button class="submit-btn" mat-stroked-button color="primary" type="submit">{{ requestType== 'post' ? 'Criar novo' : 'Atualizar'}} jogo</button>
+  </form>
+</div>

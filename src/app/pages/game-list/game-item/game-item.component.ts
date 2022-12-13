@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+
+import { GameService } from './../../../services/game.service';
 import Game from 'src/app/models/Game';
 
 @Component({
@@ -8,18 +10,15 @@ import Game from 'src/app/models/Game';
 })
 export class GameItemComponent implements OnInit {
 
-  @Input() game: Game = {
-    title: 'Título do Jogo',
-    imageUrl: '',
-    videoUrl: '',
-    description: '',
-    price: 0,
-    discountPercentage: 0,
-  };
+  @Input() game: Game = new Game('Sem título')
 
-  constructor() { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
+  }
+
+  removeGame() {
+    if (this.game) this.gameService.deleteGame(this.game.id);
   }
 
 }

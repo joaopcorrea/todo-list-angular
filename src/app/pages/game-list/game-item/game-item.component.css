@@ -1,3 +1,7 @@
+a {
+  color: #ccc;
+}
+
 .game-item {
   color: #ccc;
   background: #161616;
@@ -25,6 +29,24 @@
   width: calc(100% - 20px);
   bottom: -25px;
   transition: all .2s ease;
+  z-index: 5;
+}
+
+.game-remove {
+  position: absolute;
+  top: -20px;
+  opacity: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 66, 66);
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 1px;
+  background: rgba(34, 34, 34, 1);
+  transition: all .2s ease;
+  cursor: pointer;
 }
 
 .game-item:hover {
@@ -35,7 +57,16 @@
   opacity: .4;
 }
 
-.game-item:hover .game-title {
+.game-item:hover .game-title{
   opacity: 1;
   bottom: 0px;
+}
+
+.game-item:hover .game-remove {
+  opacity: 1;
+  top: 0px;
+}
+
+.game-remove:hover {
+  background: rgb(49, 31, 31);
 }

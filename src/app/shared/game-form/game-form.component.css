@@ -1,0 +1,19 @@
+.container {
+  padding-top: 100px;
+  color: white;
+}
+
+.task-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px 200px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submit-btn {
+  max-width: 200px;
+}

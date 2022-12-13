@@ -1,7 +1,8 @@
 <div class="game-container">
-  <video autoplay muted loop class="game-video">
+  <video *ngIf="game.videoUrl" autoplay muted loop class="game-video">
     <source [src]="game.videoUrl" type="video/mp4">
   </video>
+  <img *ngIf="!game.videoUrl" [src]="game.imageUrl" class="game-video">
   <div class="game-info-container">
     <div class="game-header">
       <img [src]="game.imageUrl" class="game-image">
@@ -16,8 +17,14 @@
           <span class="final-price">{{(game.discountPercentage ? salePrice : game.price) | currency: 'R$ '}}</span>
         </div>
       </div>
-      <button class="shop-button cart">EDITAR JOGO</button>
-      <button class="shop-button buy">REMOVER JOGO</button>
+      <button class="shop-button cart" (click)="openDialog()">EDITAR JOGO</button>
+      <button class="shop-button buy" (click)="removeGame()">REMOVER JOGO</button>
     </div>
   </div>
+
+  <ng-template #dialogTemplate>
+    <app-dialog>
+      <app-game-form requestType="update" [newGame]="game"></app-game-form>
+    </app-dialog>
+  </ng-template>
 </div>

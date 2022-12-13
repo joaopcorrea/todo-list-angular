@@ -1,4 +1,10 @@
 <div class="game-item">
-  <img [src]="game.imageUrl" alt="Imagem do jogo">
-  <div class="game-title">{{game.title}}</div>
+  <a routerLink="/game-detail" [state]="{ game }">
+    <img [src]="game.imageUrl" alt="Imagem do jogo">
+    <div class="game-title">{{game.title}}</div>
+  </a>
+  <div class="game-remove" (click)="removeGame()">
+    <mat-icon>delete</mat-icon>
+    Remover
+  </div>
 </div>
