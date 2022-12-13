@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 70px;
 }
 
 app-search {
@@ -17,4 +18,8 @@ app-search {
   flex-wrap: wrap;
 
   max-width: 1366px;
+}
+
+a {
+  cursor: pointer;
 }

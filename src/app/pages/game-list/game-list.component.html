@@ -2,13 +2,15 @@
   <app-search (searchChanged)="searchValue = $event"></app-search>
   <div class="game-list">
     <ng-container *ngFor="let game of gameList">
-      <app-game-item 
-        [game]="game" 
-        *ngIf="game.title.toLowerCase().includes(searchValue)"
-        saleDirective 
-        [discountPercentage]="game.discountPercentage" 
-        [originalPrice]="game.price"
-        ></app-game-item>
+      <a routerLink="/game-detail" [state]="{ game }">
+        <app-game-item 
+          [game]="game" 
+          *ngIf="game.title.toLowerCase().includes(searchValue)"
+          saleDirective 
+          [discountPercentage]="game.discountPercentage" 
+          [originalPrice]="game.price"
+          ></app-game-item>
+      </a>
     </ng-container>
   </div>
 </div>

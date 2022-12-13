@@ -1,0 +1,23 @@
+<div class="game-container">
+  <video autoplay muted loop class="game-video">
+    <source [src]="game.videoUrl" type="video/mp4">
+  </video>
+  <div class="game-info-container">
+    <div class="game-header">
+      <img [src]="game.imageUrl" class="game-image">
+      <h1 class="game-title">{{game.title}}</h1>
+      <span class="game-description">{{game.description}}</span>
+    </div>
+    <div class="shop-container">
+      <div class="price-container">
+        <span *ngIf="game.discountPercentage" class="discount-pct">{{game.discountPercentage | discount}}</span>
+        <div class="discount-prices">
+          <span *ngIf="game.discountPercentage" class="original-price">{{game.price | currency: 'R$ '}}</span>
+          <span class="final-price">{{(game.discountPercentage ? salePrice : game.price) | currency: 'R$ '}}</span>
+        </div>
+      </div>
+      <button class="shop-button cart">EDITAR JOGO</button>
+      <button class="shop-button buy">REMOVER JOGO</button>
+    </div>
+  </div>
+</div>

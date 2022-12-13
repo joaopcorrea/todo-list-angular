@@ -15,6 +15,7 @@ export class SaleComponent implements OnInit {
 
   ngOnInit(): void {
     this.finalPrice = this.originalPrice - (this.originalPrice * (this.discountPercentage / 100)) - 0.01;
+    console.log(this.finalPrice);
   }
 
 }

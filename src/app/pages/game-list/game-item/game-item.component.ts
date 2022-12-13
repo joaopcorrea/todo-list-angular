@@ -11,6 +11,8 @@ export class GameItemComponent implements OnInit {
   @Input() game: Game = {
     title: 'Título do Jogo',
     imageUrl: '',
+    videoUrl: '',
+    description: '',
     price: 0,
     discountPercentage: 0,
   };

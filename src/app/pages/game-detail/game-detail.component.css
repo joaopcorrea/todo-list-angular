@@ -1,0 +1,122 @@
+.game-container {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  padding-top: 45%;
+
+  color: #fafafa;
+}
+
+.game-video {
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+}
+
+.game-info-container {
+  background-color: rgb(25, 25, 25, 1);
+  box-shadow: 0px -50px 75px 75px rgba(25, 25, 25, 1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0px 100px 20px 100px;
+}
+
+.game-image {
+  width: 323px;
+  height: 173px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.game-title {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+.shop-container {
+  margin-left: 100px;
+  min-width: 250px;
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.discount-pct {
+  background: #4c6b22;
+  color: #BEEE11;
+  padding: 0 5px;
+  align-items: center;
+  font-size: 26px;
+  display: flex;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.discount-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.original-price {
+  color: #ccc;
+  position: relative;
+}
+
+.original-price:before {
+  content: '';
+  left: 0px;
+  right: 0px;
+  position: absolute;
+  top: 43%;
+  border-bottom: 1.5px solid #ccc;
+  transform: skewY(-8deg);
+  box-shadow: 0 0 2px black;
+}
+
+.final-price {
+  font-size: 26px;
+}
+
+.shop-button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.shop-button.buy {
+  background-color: #ff3c3c;
+  border: none;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.shop-button.cart {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.shop-button.cart:hover {
+  background-color: rgb(75, 75, 75);
+}
+
+.shop-button.buy:hover {
+  background-color: #bb2929;
+}
