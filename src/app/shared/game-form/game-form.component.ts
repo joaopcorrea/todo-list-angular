@@ -1,7 +1,8 @@
 import { GameService } from './../../services/game.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Game from 'src/app/models/Game';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game-form',
@@ -9,12 +10,12 @@ import Game from 'src/app/models/Game';
   styleUrls: ['./game-form.component.css']
 })
 export class GameFormComponent implements OnInit {
-  @Input() newGame: Game = new Game('Sem título');
+  @Input() newGame: Game = new Game('');
   @Input() requestType: string = 'add';
 
   gameForm?: FormGroup;
 
-  constructor(private gameService: GameService) {}
+  constructor(private gameService: GameService, public router: Router) {}
 
   ngOnInit(): void {
     this.gameForm = new FormGroup({
@@ -22,8 +23,15 @@ export class GameFormComponent implements OnInit {
       description: new FormControl(this.newGame.description),
       imageUrl: new FormControl(this.newGame.imageUrl),
       videoUrl: new FormControl(this.newGame.videoUrl),
-      price: new FormControl(this.newGame.price),
-      discountPercentage: new FormControl(this.newGame.discountPercentage),
+      price: new FormControl(this.newGame.price, [
+        Validators.required,
+        Validators.min(1)
+      ]),
+      discountPercentage: new FormControl(this.newGame.discountPercentage, [
+        Validators.required,
+        Validators.min(0),
+        Validators.max(100)
+      ]),
     });
   }
 
@@ -41,9 +49,13 @@ export class GameFormComponent implements OnInit {
 
     if (this.requestType === 'add') {
       this.gameService.addGame(this.newGame);
+      alert('Jogo adicionado com sucesso!');
     }
     else {
       this.gameService.updateGame(this.newGame.id, this.newGame);
+      alert('Jogo atualizado com sucesso!');
     }
+
+    this.router.navigate(['home']);
   }
 }

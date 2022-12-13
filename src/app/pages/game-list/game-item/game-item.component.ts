@@ -19,6 +19,7 @@ export class GameItemComponent implements OnInit {
 
   removeGame() {
     if (this.game) this.gameService.deleteGame(this.game.id);
+    alert('Jogo removido com sucesso!');
   }
 
 }

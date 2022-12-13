@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './../../shared/dialog/dialog.component';
 import { GameService } from './../../services/game.service';
 import Game from 'src/app/models/Game';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game-detail',
@@ -15,7 +16,7 @@ export class GameDetailComponent implements OnInit {
   public game: Game = new Game('Sem título');
   salePrice: number = 0;
   
-  constructor(private dialog: MatDialog, private gameService: GameService) {}
+  constructor(private dialog: MatDialog, private gameService: GameService, public router: Router) {}
 
   ngOnInit(): void {
     this.game = window.history.state.game;
@@ -30,5 +31,7 @@ export class GameDetailComponent implements OnInit {
 
   removeGame() {
     this.gameService.deleteGame(this.game.id);
+    alert('Jogo removido com sucesso!');
+    this.router.navigate(['home']);
   }
 }

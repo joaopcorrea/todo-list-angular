@@ -11,9 +11,9 @@
     </div>
     <div class="shop-container">
       <div class="price-container">
-        <span *ngIf="game.discountPercentage" class="discount-pct">{{game.discountPercentage | discount}}</span>
+        <span *ngIf="game.discountPercentage > 0" class="discount-pct">{{game.discountPercentage | discount}}</span>
         <div class="discount-prices">
-          <span *ngIf="game.discountPercentage" class="original-price">{{game.price | currency: 'R$ '}}</span>
+          <span *ngIf="game.discountPercentage > 0" class="original-price">{{game.price | currency: 'R$ '}}</span>
           <span class="final-price">{{(game.discountPercentage ? salePrice : game.price) | currency: 'R$ '}}</span>
         </div>
       </div>
