@@ -2,9 +2,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-
-  padding-top: 45%;
-
+  
+  position: absolute;
+  bottom: -150px;
   color: #fafafa;
 }
 
