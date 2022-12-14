@@ -2,10 +2,11 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  
+
   position: absolute;
   bottom: -150px;
   color: #fafafa;
+  width: 100%;
 }
 
 .game-video {
