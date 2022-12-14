@@ -5,7 +5,8 @@ import Game from '../models/Game';
   providedIn: 'root'
 })
 export class GameService {
-  gameList: Game[] = [
+  gameList: Game[];
+  gameListMock: Game[] = [
     {
       id: 1,
       title: 'Ghost Recon Wildlands',
@@ -116,7 +117,13 @@ export class GameService {
     },
   ];
 
-  constructor() { }
+  constructor() { 
+    if (!localStorage.getItem('gameList')) {
+      localStorage.setItem('gameList', JSON.stringify(this.gameListMock));
+    }
+
+    this.gameList = JSON.parse(localStorage.getItem('gameList')!);
+  }
 
   getGames(): Game[] {
     return this.gameList;
@@ -124,17 +131,23 @@ export class GameService {
 
   addGame(newGame: Game) {
     this.gameList.push(newGame);
+
+    localStorage.setItem('gameList', JSON.stringify(this.gameList));
   }
 
   updateGame(id: number, updatedGame: Game) {
-    const index = this.gameList.findIndex((task)=> task.id == id);
+    const index = this.gameList.findIndex((game: Game)=> game.id == id);
     if (index == -1) return;
     this.gameList[index] = updatedGame;
+
+    localStorage.setItem('gameList', JSON.stringify(this.gameList));
   }
 
   deleteGame(id: number) {
-    const index = this.gameList.findIndex((task)=> task.id == id);
+    const index = this.gameList.findIndex((game: Game)=> game.id == id);
     if (index == -1) return;
     this.gameList.splice(index, 1);
+
+    localStorage.setItem('gameList', JSON.stringify(this.gameList));
   }
 }

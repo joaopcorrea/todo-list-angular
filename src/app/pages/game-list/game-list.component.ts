@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
 import { GameService } from './../../services/game.service';
 import Game from 'src/app/models/Game';
